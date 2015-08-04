@@ -19,12 +19,17 @@ Template.simpleForm.events({
       email: event.target.email.value
     };
 
+    event.target.fname.value = "";
+    event.target.lname.value = "";
+    event.target.zipCode.value = "";
+    event.target.email.value = "";
+
     Meteor.call("addDonation", donation);
   }
 });
 
 Template.eWasteForm.events({
-  
+
   "submit .ewaste-form": function(event) {
     event.preventDefault();
 
@@ -41,6 +46,18 @@ Template.eWasteForm.events({
       tvs: event.target.tvs.value,
       monitors: event.target.monitors.value
     };
+
+    event.target.fname.value = "";
+    event.target.lname.value = "";
+    event.target.street.value = "";
+    event.target.city.value = "";
+    event.target.zipCode.value = "";
+    event.target.state.value = "";
+    event.target.email.value = "";
+    event.target.phone.value = "";
+    event.target.computers.value = "";
+    event.target.tvs.value = "";
+    event.target.monitors.value = "";
 
     Meteor.call("addEWaste", donation);
   }
