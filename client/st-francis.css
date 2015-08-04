@@ -1,0 +1,25 @@
+/* CSS declarations go here */
+header {
+  margin: 30px;
+}
+
+.row {
+  margin-left: 0;
+}
+
+.donation-form {
+  float: left;
+}
+
+.customer-form {
+  float: left;
+  margin-right: 50px;
+}
+
+.items-form {
+  float: left;
+}
+
+.submitEWaste {
+  margin-top: 10px;
+}
