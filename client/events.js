@@ -19,9 +19,12 @@ Template.simpleForm.events({
       email: event.target.email.value
     };
 
-    Meteor.call("addDonation", donation)
-  },
+    Meteor.call("addDonation", donation);
+  }
+});
 
+Template.eWasteForm.events({
+  
   "submit .ewaste-form": function(event) {
     event.preventDefault();
 
@@ -41,4 +44,5 @@ Template.simpleForm.events({
 
     Meteor.call("addEWaste", donation);
   }
+
 });
