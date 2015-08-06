@@ -5,35 +5,54 @@
 <body>
   <div class="container">
 
-    <header>
-      <h1>Donate</h1>
+  <nav class="navbar navbar-default navbar-static-top">
+      <!-- We use the fluid option here to avoid overriding the fixed width of a normal container within the narrow content columns. -->
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">SF GOODWILL</a>
+        </div>
 
-      {{> loginButtons}}
-      
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-8">
+          <ul class="nav navbar-nav">
+            {{#if currentUser}}
+              <li class="simple-form-radio"><a href="#">General Donation</a></li>
+              <li class="ewaste-form-radio"><a href="#">eWaste Form</a></li>
+            {{/if}}
+            <li><a href="#">{{> loginButtons}}</a></li>
+          </ul>
+        </div><!-- /.navbar-collapse -->
+      </div>
+    </nav>
+<!--
+    <header>
       {{#if currentUser}}
-        <form>
-          <label class="radio-inline">
-            <input type="radio" checked="checked" name="formOptions" class="simple-form-radio" value="simple-form"> General Donation
-          </label>
-          <label class="radio-inline">
-            <input type="radio" name="formOptions" class="ewaste-form-radio" value="ewaste-form"> eWaste Form
-          </label>
-        </form>
+          <ul class="nav nav-pills">
+            <div class="row">
+              <div class="col-xs-2">
+                <li class="active simple-form-radio"><a href="#">General Donation</a></li>
+              </div>
+              <div class="col-xs-2">
+                <li class="active ewaste-form-radio"><a href="#">eWaste Form</a></li>
+              </div>
+            </div>
+          </ul>
       {{/if}}
 
     </header>
-
-    <div class="container">
+-->
+    <div class="container-fluid">
       
       <div class="row">
-
-        <div class="col-md-12">
+        {{#if currentUser}}
           {{#if formSelected}}
             {{> eWasteForm }}
           {{else}}
             {{> simpleForm }}
           {{/if}}
-        </div>
+        {{else}}
+          {{> simpleForm}}
+        {{/if}}
         
       </div>
 
@@ -46,7 +65,7 @@
 </body>
  
 <template name="simpleForm">
-  <div class="col-md-6">
+  <div class="col-xs-4">
     <form class="donation-form">
       <h3>Customer's info</h3>
       <div class="form-group">
@@ -78,93 +97,114 @@
 <template name="eWasteForm">
 
     <form class="ewaste-form">
+      <div class="col-xs-4">
+        <div class="customer-form">
 
-      <div class="customer-form">
-        <h3>Customer's info</h3>
-        <div class="form-group">
-          <label for="fName">First Name</label>
-          <input type="text" class="form-control" name="fName" placeholder="First Name">
-        </div>
+          <h3>Customer's info</h3>
 
-        <div class="form-group">
-          <label for="lName">Last Name</label>
-          <input type="text" class="form-control" name="lName" placeholder="Last Name">
-        </div>
+          <div class="form-group">
+            <label for="fName">First Name</label>
+            <input type="text" class="form-control" name="fName" placeholder="First Name">
+          </div>
 
-        <div class="form-group">
-          <label for="streetAddress">Street Address</label>
-          <input type="text" class="form-control" name="street" placeholder="Street Address">
-        </div>
+          <div class="form-group">
+            <label for="lName">Last Name</label>
+            <input type="text" class="form-control" name="lName" placeholder="Last Name">
+          </div>
 
-        <div class="form-group">
-          <label for="city">City</label>
-          <input type="text" class="form-control" name="city" placeholder="City">
-        </div>
+          <div class="form-group">
+            <label for="streetAddress">Street Address</label>
+            <input type="text" class="form-control" name="street" placeholder="Street Address">
+          </div>
 
-        <div class="form-group">
-          <label for="zipCode">Zip Code</label>
-          <input type="text" class="form-control" name="zipCode" placeholder="Zip Code">
-        </div>
+          <div class="form-group">
+            <label for="city">City</label>
+            <input type="text" class="form-control" name="city" placeholder="City">
+          </div>
 
-        <div class="form-group">
-          <label for="state">State</label>
-          <input type="text" class="form-control" name="state" placeholder="State">
-        </div>
+          <div class="form-group">
+            <label for="zipCode">Zip Code</label>
+            <input type="text" class="form-control" name="zipCode" placeholder="Zip Code">
+          </div>
 
-        <div class="form-group">
-          <label for="email">Email address</label>
-          <input type="email" class="form-control" name="email" placeholder="Email">
-        </div>
+          <div class="form-group">
+            <label for="state">State</label>
+            <input type="text" class="form-control" name="state" placeholder="State">
+          </div>
 
-        <div class="form-group">
-          <label for="phone">Phone number</label>
-          <input type="tel" class="form-control" name="phone" placeholder="Phone">
+          <div class="form-group">
+            <label for="email">Email address</label>
+            <input type="email" class="form-control" name="email" placeholder="Email">
+          </div>
+
+          <div class="form-group">
+            <label for="phone">Phone number</label>
+            <input type="tel" class="form-control" name="phone" placeholder="Phone">
+          </div>
         </div>
       </div>
 
-      <div class="items-form">
+      <div class="col-xs-4">
+        <div class="items-form">
 
-        <h3>Items donated</h3>
+          <h3>Items donated</h3>
 
-        <div class="col-md-4">
-          <label for="computers">Computers</label>
-            <select class="form-control" name="computers">
-              <option>0</option>
-              <option>1</option>
-              <option>2</option>
-              <option>3</option>
-              <option>4</option>
-              <option>5</option>
-            </select>
+          <div class="form-group">
+            <label for="computers">TV / Monitor / Rear Projection</label>
+              <select class="form-control" name="computers">
+                <option>0</option>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+              </select>
+          </div>
+
+          
+          <div class="form-group">
+            <label for="computers">TV / Monitor / FlatPanel</label>
+              <select class="form-control" name="tvs">
+                <option>0</option>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+              </select>
+          </div>
+          
+
+          <div class="form-group">
+            <label for="computers">TV / Monitor / CRT</label>
+              <select class="form-control" name="monitors">
+                <option>0</option>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+              </select>
+          </div>
+
+          <div class="form-group">
+            <label for="computers">Laptops / Tablets</label>
+              <select class="form-control" name="monitors">
+                <option>0</option>
+                <option>1</option>
+                <option>2</option>
+                <option>3</option>
+                <option>4</option>
+                <option>5</option>
+              </select>
+          </div>
+
+          <div class="form-group">
+            <button type="submit" class="btn btn-success btn-large submitEWaste"><span class="glyphicon glyphicon-send"></span>
+            Submit Donation</button>
+          </div>
+
         </div>
-
-        <div class="col-md-4">
-          <label for="computers">TVs</label>
-            <select class="form-control" name="tvs">
-              <option>0</option>
-              <option>1</option>
-              <option>2</option>
-              <option>3</option>
-              <option>4</option>
-              <option>5</option>
-            </select>
-        </div>
-
-        <div class="col-md-4">
-          <label for="computers">Monitors</label>
-            <select class="form-control" name="monitors">
-              <option>0</option>
-              <option>1</option>
-              <option>2</option>
-              <option>3</option>
-              <option>4</option>
-              <option>5</option>
-            </select>
-        </div>
-
-          <button type="submit" class="btn btn-success btn-large submitEWaste"><span class="glyphicon glyphicon-send"></span>
-          Submit Donation</button>
-
       </div>
 
     </form>

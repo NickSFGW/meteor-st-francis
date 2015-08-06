@@ -18,11 +18,7 @@ Template.simpleForm.events({
       zipCode: event.target.zipCode.value,
       email: event.target.email.value
     };
-
-    event.target.fname.value = "";
-    event.target.lname.value = "";
-    event.target.zipCode.value = "";
-    event.target.email.value = "";
+    //console.log(donation);
 
     Meteor.call("addDonation", donation);
   }
@@ -44,22 +40,15 @@ Template.eWasteForm.events({
       phone: event.target.phone.value,
       computers: event.target.computers.value,
       tvs: event.target.tvs.value,
-      monitors: event.target.monitors.value
+      monitors: event.target.monitors.value,
+      createdAt: new Date()
     };
 
-    event.target.fname.value = "";
-    event.target.lname.value = "";
-    event.target.street.value = "";
-    event.target.city.value = "";
-    event.target.zipCode.value = "";
-    event.target.state.value = "";
-    event.target.email.value = "";
-    event.target.phone.value = "";
-    event.target.computers.value = "";
-    event.target.tvs.value = "";
-    event.target.monitors.value = "";
+    //console.log(donation);
 
     Meteor.call("addEWaste", donation);
+    Session.set("selectedForm", false);
+
   }
 
 });
