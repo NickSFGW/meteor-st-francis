@@ -18,7 +18,7 @@ Template.simpleForm.events({
       zipCode: event.target.zipCode.value,
       email: event.target.email.value
     };
-    //console.log(donation);
+    console.log(donation);
 
     Meteor.call("addDonation", donation);
   }
@@ -44,7 +44,7 @@ Template.eWasteForm.events({
       createdAt: new Date()
     };
 
-    //console.log(donation);
+    console.log(donation);
 
     Meteor.call("addEWaste", donation);
     Session.set("selectedForm", false);

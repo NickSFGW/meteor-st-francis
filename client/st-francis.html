@@ -5,25 +5,42 @@
 <body>
   <div class="container">
 
+  <div class="header clearfix">
+        <nav>
+          <ul class="nav nav-pills pull-right top-nav">
+            {{#if currentUser}}
+              <li class="simple-form-radio"><a href="#">General Donation</a></li>
+              <li class="ewaste-form-radio"><a href="#">eWaste Form</a></li>
+            {{/if}}
+            <li class="pull-right"><a href="#">{{> loginButtons}}</a></li>
+          </ul>
+        </nav>
+        <h3 class="text-muted">SF GOODWILL</h3>
+  </div>
+<!--
   <nav class="navbar navbar-default navbar-static-top">
-      <!-- We use the fluid option here to avoid overriding the fixed width of a normal container within the narrow content columns. -->
+      
       <div class="container-fluid">
+
+
+
         <div class="navbar-header">
           <a class="navbar-brand" href="#">SF GOODWILL</a>
         </div>
 
-        <!-- Collect the nav links, forms, and other content for toggling -->
-        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-8">
+
+        <div class="">
           <ul class="nav navbar-nav">
             {{#if currentUser}}
               <li class="simple-form-radio"><a href="#">General Donation</a></li>
               <li class="ewaste-form-radio"><a href="#">eWaste Form</a></li>
             {{/if}}
-            <li><a href="#">{{> loginButtons}}</a></li>
+            <li class="pull-right"><a href="#">{{> loginButtons}}</a></li>
           </ul>
-        </div><!-- /.navbar-collapse -->
+        </div>
       </div>
     </nav>
+-->
 <!--
     <header>
       {{#if currentUser}}
@@ -41,7 +58,7 @@
 
     </header>
 -->
-    <div class="container-fluid">
+    <div class="container">
       
       <div class="row">
         {{#if currentUser}}
@@ -65,7 +82,7 @@
 </body>
  
 <template name="simpleForm">
-  <div class="col-xs-4">
+  <div class="col-lg-3">
     <form class="donation-form">
       <h3>Customer's info</h3>
       <div class="form-group">
@@ -97,7 +114,7 @@
 <template name="eWasteForm">
 
     <form class="ewaste-form">
-      <div class="col-xs-4">
+      <div class="col-lg-3">
         <div class="customer-form">
 
           <h3>Customer's info</h3>
@@ -144,7 +161,7 @@
         </div>
       </div>
 
-      <div class="col-xs-4">
+      <div class="col-lg-3">
         <div class="items-form">
 
           <h3>Items donated</h3>
