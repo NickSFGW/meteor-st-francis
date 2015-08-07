@@ -9,7 +9,7 @@ Template.body.events({
 
 Template.simpleForm.events({
 
-  "submit .donation-form": function(event) {
+  "submit .donation-form": function(event, template) {
     event.preventDefault();
 
     var donation = {
@@ -18,15 +18,16 @@ Template.simpleForm.events({
       zipCode: event.target.zipCode.value,
       email: event.target.email.value
     };
-    console.log(donation);
 
     Meteor.call("addDonation", donation);
+
+    template.find(".donation-form").reset();
   }
 });
 
 Template.eWasteForm.events({
 
-  "submit .ewaste-form": function(event) {
+  "submit .ewaste-form": function(event, template) {
     event.preventDefault();
 
     var donation = {
@@ -38,16 +39,17 @@ Template.eWasteForm.events({
       state: event.target.state.value,
       email: event.target.email.value,
       phone: event.target.phone.value,
-      computers: event.target.computers.value,
-      tvs: event.target.tvs.value,
-      monitors: event.target.monitors.value,
+      laptops: event.target.laptops.value,
+      monitorsRear: event.target.rear.value,
+      monitorsFlat: event.target.flat.value,
+      crts: event.target.crts.value,
       createdAt: new Date()
     };
 
-    console.log(donation);
-
     Meteor.call("addEWaste", donation);
-    Session.set("selectedForm", false);
+
+    template.find(".ewaste-form").reset();
+    
 
   }
 
