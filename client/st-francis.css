@@ -43,3 +43,7 @@ h4 {
 .gwlogo {
 	margin-top: 20px;
 }
+
+#login-buttons .login-button, .accounts-dialog .login-button {
+  padding: 7px 25px;
+}

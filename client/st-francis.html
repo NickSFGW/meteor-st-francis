@@ -1,5 +1,6 @@
 <head>
   <title>San Francisco Goodwill Donate</title>
+   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
  
 <body>
@@ -8,17 +9,17 @@
     <div class="header clearfix">
       <nav>
         <div class="nav-wrapper light-blue darken-3">
-          <ul id="nav-mobile" class="left">
-            <li><a class="nav-item active" href="#">{{> loginButtons}}</a></li>
+          <ul id="login-form" class="left">
+            <li><a class="nav-item active logButtons" href="#">{{> loginButtons}}</a></li>
           </ul>
 
           <ul id="nav-mobile" class="right">
             
             {{#if currentUser}}
-              <li class="simple-form-radio"><a class="nav-item" href="#">General Donation</a></li>
-              <li class="ewaste-form-radio"><a class="nav-item" href="#">eWaste Form</a></li>
+              <li class="simple-form-menu"><a class="nav-item" href="#">General Donation</a></li>
+              <li class="ewaste-form-menu"><a class="nav-item" href="#">eWaste Form</a></li>
             {{/if}}
-        </ul>
+          </ul>
         </div>
       </nav>
        
@@ -65,7 +66,7 @@
         <input autocomplete="off" type="email" class="form-control" name="email" placeholder="Email">
       </div>
 
-      <button type="submit" class="btn waves-effect waves-light light-blue darken-3 submitDonation"><span class="glyphicon glyphicon-send"></span>
+      <button type="submit" class="btn waves-effect waves-light light-blue darken-3 submitDonation"><i class="material-icons left">send</i>
       Submit Donation</button>
     </form>
 </template>
@@ -136,8 +137,8 @@
           </div>
 
           <div>
-            <button type="submit" class="btn waves-effect waves-light light-blue darken-3 submitEWaste"><span class="glyphicon glyphicon-send"></span>
-            Submit Donation</button>
+            <button type="submit" class="btn waves-effect waves-light light-blue darken-3 submitEWaste"><i class="material-icons left">send</i>
+      Submit Donation</button>
           </div>
 
         </div>
@@ -146,12 +147,14 @@
     </form>
 </template>
 
-<template name="loginForm">
-
-{{#if currentUser}}
-
-{{else}}
-
-{{/if}}
-
+<template name="login">
+  <form>
+    <input type="text" placeholder="Email Address" name="email">
+    <input type="password" placeholder="Password" name="password">
+    <p>
+      <input type="checkbox" id="registerCb" class="filled-in" name="registerCb" />
+      <label class="registerCBox" for="registerCb">Register</label>
+    </p>
+    <input type="submit" value="Log In">
+  </form>
 </template>
