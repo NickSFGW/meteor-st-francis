@@ -18,7 +18,6 @@ Template.simpleForm.events({
       zipCode: event.target.zipCode.value,
       email: event.target.email.value
     };
-
     Meteor.call("addDonation", donation);
 
     template.find(".donation-form").reset();
@@ -52,31 +51,3 @@ Template.eWasteForm.events({
   }
 
 });
-/*
-Template.login.events({
-  'click #registerCb': function (event) {
-    Session.set("register", $('#registerCb').is(":checked"));
-  },
-  "submit form": function (event, template) {
-    console.log("submitted");
-    event.preventDefault();
-    var emailVar = event.target.email.value;
-    var passwordVar = event.target.password.value;
-    console.log(emailVar);
-
-    //if checkbox is checked, register the user
-    if (Session.get("register")) {
-      console.log("checked");
-      Accounts.createUser({
-        email: emailVar,
-        password: passwordVar
-      });
-      Session.set("register", false);
-    }
-    //Else, log them in
-    else{
-      Meteor.loginWithPassword(emailVar, passwordVar);
-    };
-  },
-});
-*/
