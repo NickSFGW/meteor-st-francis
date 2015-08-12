@@ -1,6 +1,6 @@
 /* CSS declarations go here */
 header {
-  margin: 30px 0;
+  margin: 25px 0;
 }
 
 h4 {
@@ -41,7 +41,7 @@ h4 {
 }
 
 .gwlogo {
-	margin-top: 20px;
+	margin-top: 15px;
 }
 
 #login-buttons .login-button, .accounts-dialog .login-button {

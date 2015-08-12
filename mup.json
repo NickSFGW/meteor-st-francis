@@ -34,7 +34,8 @@
   // ROOT_URL must be set to your correct domain (https or http)
   "env": {
     "PORT": 80,
-    "ROOT_URL": "https://donate.sfgoodwill.org",
+    //"ROOT_URL": "https://donate.sfgoodwill.org",
+    "ROOT_URL": "http://104.197.87.34",
     //"MAIL_URL": "smtp://nvigier:Goodwill10@smtp.sendgrid.net:587"
     "MAIL_URL": "smtp://nvigier:Goodwill10@smtp.sendgrid.net:2525"
   },
