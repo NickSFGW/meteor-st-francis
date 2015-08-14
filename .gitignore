@@ -1,2 +1,7 @@
 .meteor/local
 .meteor/meteorite
+mup.json
+android/
+ST-st-francis*
+TODO.rtf
+.DS_Store
