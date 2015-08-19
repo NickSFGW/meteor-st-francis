@@ -42,6 +42,8 @@ Template.eWasteForm.events({
       state: event.target.state.value,
       email: event.target.email.value,
       phone: event.target.phone.value,
+      //location: template.find("li.active>span").innerHTML,
+      location: template.find('.locations').value,
       laptops: event.target.laptops.value,
       monitorsRear: event.target.rear.value,
       monitorsFlat: event.target.flat.value,
@@ -51,7 +53,7 @@ Template.eWasteForm.events({
 
     Meteor.call("addEWaste", donation);
 
-    template.find(".ewaste-form").reset();
+    //template.find(".ewaste-form").reset();
   }
 
 });

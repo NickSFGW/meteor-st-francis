@@ -1,9 +1,9 @@
 App.info({
-	id: "come.sfgoodwill.stfrancis",
+	id: "org.sfgoodwill.donate",
 	name: "Donation App",
 	description: "Donation app for SF Goodwill",
 	author: "Nicolas Vigier",
-	website: "http://sfgoodwill.org"
+	website: "https://sfgoodwill.org"
 });
 
 App.accessRule("https://fonts.googleapis.com");

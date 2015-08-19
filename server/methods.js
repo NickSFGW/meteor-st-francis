@@ -16,6 +16,8 @@ Meteor.methods({
       console.log("not-authorized");
     }
     else {
+      console.log(donation);
+
       EWaste.insert(donation);
     }
     //var html = '<html><body>Dear ' +  donation.fName + ' ' + donation.lName + ',<br/><br/>Here is a summary of your donation:<br/><br/><strong>Donation Date:</strong> ' + new Date().toISOString().replace(/T/, ' ').replace(/\..+/, '') + '<br/><strong>Receipt Number:</strong> ' + "\"receipt\"" + '<br/> ';

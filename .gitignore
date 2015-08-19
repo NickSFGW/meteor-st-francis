@@ -2,6 +2,7 @@
 .meteor/meteorite
 mup.json
 android/
+server/smtp.js
 ST-st-francis*
 TODO.rtf
 .DS_Store
