@@ -57,5 +57,9 @@ h4, h5, h6 {
 }
 
 .locationDD {
-  margin: 40px 0;
+  margin: 0 0 55px 0;
+}
+
+.sumbitBtn {
+  width: 100%;
 }
