@@ -7,6 +7,10 @@ Template.body.events({
   },
 });
 
+Template.eWasteForm.onRendered(function () {
+    $('select').material_select();
+});
+
 Template.simpleForm.events({
 
   "submit .donation-form": function(event, template) {

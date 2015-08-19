@@ -2,7 +2,7 @@
   <title>San Francisco Goodwill Donate</title>
    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
 </head>
- 
+
 <body>
   <div class="container">
 
@@ -14,7 +14,7 @@
           </ul>
 
           <ul id="nav-mobile" class="right">
-            
+
             {{#if currentUser}}
               <li class="simple-form-menu"><a class="nav-item" href="#">General Donation</a></li>
               <li class="ewaste-form-menu"><a class="nav-item" href="#">eWaste Form</a></li>
@@ -22,7 +22,7 @@
           </ul>
         </div>
       </nav>
-       
+
     </div>
 
     <div class="container">
@@ -30,7 +30,7 @@
     <div class="row">
       <img class="responsive-img gwlogo" src="img/goodwill_logo.png">
     </div>
-      
+
       <div class="row">
         {{#if currentUser}}
           {{#if formSelected}}
@@ -46,7 +46,7 @@
     </div>
   </div>
 </body>
- 
+
 <template name="simpleForm">
     <form class="donation-form col s12 m9">
       <h4>Customer's info</h4>
@@ -73,8 +73,30 @@
 
 <template name="eWasteForm">
 
-    <form class="ewaste-form">
+    <form class="ewaste-form" id="ewasteform">
         <div class="customer-form col s12 m9">
+
+          <div class="locationDD">
+            <h5>Location</h5>
+            <div class="input-field">
+              <select class="locations">
+                <option  value="Select EWaste Location(San Francisco only)" selected="selected">Select EWaste Location(San Francisco only)</option>
+                <option  value="5036 - 1500 Mission Truckyard">5036 - 1500 Mission Truckyard</option>
+                <option  value="5056 - 5th and Brannan St. Donation Site">5056 - 5th and Brannan St. Donation Site</option>
+                <option  value="5180 - 1580 Mission">5180 - 1580 Mission</option>
+                <option  value="5181 - Original Mission">5181 - Original Mission</option>
+                <option  value="5182 - Fillmore">5182 - Fillmore</option>
+                <option  value="5183 - Haight">5183 - Haight</option>
+                <option  value="5184 - Geary">5184 - Geary</option>
+                <option  value="5186 - Bayview">5186 - Bayview</option>
+                <option  value="5187 - Clement">5187 - Clement</option>
+                <option  value="5188 - West Portal">5188 - West Portal</option>
+                <option  value="5189 - Ocean">5189 - Ocean</option>
+                <option  value="5247 - Marina Donation Center">5247 - Marina Donation Center</option>
+                <option  value="5253 - Sunset">5253 - Sunset</option>
+              </select>
+            </div>
+          </div>
 
           <h4>Customer's info</h4>
 

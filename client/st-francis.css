@@ -1,10 +1,18 @@
 /* CSS declarations go here */
 header {
-  margin: 25px 0;
+  margin: 10px 0;
 }
 
-h4 {
+h4, h5, h6 {
 	color: #666;
+}
+
+.locations li {
+  color: #666;
+}
+
+.dropdown-content li > a, .dropdown-content li > span {
+  color: #0277bd !important;
 }
 
 .input-field input[type=text]:focus {
@@ -46,4 +54,8 @@ h4 {
 
 #login-buttons .login-button, .accounts-dialog .login-button {
   padding: 7px 25px;
+}
+
+.locationDD {
+  margin: 40px 0;
 }
