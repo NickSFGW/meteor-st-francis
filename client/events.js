@@ -44,10 +44,10 @@ Template.eWasteForm.events({
       phone: event.target.phone.value,
       //location: template.find("li.active>span").innerHTML,
       location: template.find('.locations').value,
-      laptops: event.target.laptops.value,
-      monitorsRear: event.target.rear.value,
-      monitorsFlat: event.target.flat.value,
-      crts: event.target.crts.value,
+      laptops: Math.abs(event.target.laptops.value),
+      monitorsRear: Math.abs(event.target.rear.value),
+      monitorsFlat: Math.abs(event.target.flat.value),
+      crts: Math.abs(event.target.crts.value),
       createdAt: new Date()
     };
 
